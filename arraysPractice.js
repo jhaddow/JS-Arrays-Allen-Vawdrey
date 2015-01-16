@@ -126,7 +126,14 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
+var reverse = function(str) {
+  var strArray = str.split("");
+  strArray.reverse();
+  str = strArray.join("");
+  return str;
+}
 
+reverse(str);
 
 //Next Problem
 
@@ -143,10 +150,21 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
   //Code Here
-
 //removeItem('chips') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs'];
-//addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+var removeItem = function(myGroceryList, itemToRemove) {
+  var index = myGroceryList.indexOf(itemToRemove);
+  if(index !== -1) 
+    myGroceryList.splice(index,1);
+  return myGroceryList;
+}
 
+removeItem(myGroceryList, 'chips');
+//addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
+var addItem = function(myGroceryList, itemToAdd) {
+  myGroceryList.push(itemToAdd);
+  return myGroceryList;
+}
+addItem(myGroceryList, 'jerky');
 
 
 //Next Problem
@@ -156,8 +174,14 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 //Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 
   //Code Here
+var maker = function() {
+  var bigArray = [];
+  for(var i = 1; i <= 215; i++)
+    bigArray.push(i);
+  return bigArray;
+}
 
-
+maker();
 
 //Next Problem
 
@@ -167,8 +191,18 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
+var addTen = function(numbers) {
+  for (var i = 0; i < numbers.length; i++){
+    numbers[i] = parseInt(numbers[i]);    
+  }
 
+  for (var i = 0; i < numbers.length; i++) {
+    numbers[i] = numbers[i] + 10;
+  }
+  return numbers;
+}
 
+addTen(numbers);
 
 //Next Problem
 
@@ -188,8 +222,16 @@ for(var i = 0; i < num2; i++){
 //Write a function that is given arr1 and arr2 is it's only arguments. Return the array which is longest.
 
   //Code Here
+var longer = function(arr1, arr2) {
+ if(arr1.length === arr2.length)
+    return "equal";
+  else if (arr1.length < arr2.length)
+    return "arr2 - " , arr2;
+  else
+    return "arr1 - ", arr1;
+}
 
-
+longer(arr1, arr2);
 /*As a continuation of the previous problem, write another function called 'both'.
   Your 'both' function will be given two arguments, arr1 and arr2 (from the previous example)
   'both' should return a new array full of numbers that are found in both arr1 and arr2.
