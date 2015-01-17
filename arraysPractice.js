@@ -238,3 +238,32 @@ longer(arr1, arr2);
 */
 
   //Code Here
+
+var both = function(arr1, arr2) {
+   //------ Way one ---------
+   /*
+  var bothArrays = [];
+  var newIndex = 0;
+  for(var i = 0; i < arr1.length; i++) {
+    bothArrays.push(arr1[i]);
+  }
+
+  for(var i = arr1.length; i < arr1.length + arr2.length; i++){
+    bothArrays.push(arr2[newIndex++]);
+  }
+  return bothArrays;
+  */
+  
+   //------- Way two -------------
+  /*
+  for (var i = 0; i < arr1.length; i++) {
+    arr2.push(arr1[i]);
+  }
+  return arr2;
+  */
+  
+  //Way three
+  return arr2.concat(arr1);
+}
+
+both(arr1, arr2);
