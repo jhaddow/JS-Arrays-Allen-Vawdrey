@@ -31,10 +31,10 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
 //Create a function named 'looper' that is given family as it's only argument, loops through the given array, and alerts every item in the array.
 
   //Code Here
-var looper = function(family) {
+var looper = function(family) {   //what would happen if you changed the name of the parameter and you passed in family as an argument?
   for (var i = 0; i < family.length; i++)
     alert(family[i]);
-}
+};
 
 looper(family);
 //Next problem
@@ -48,7 +48,7 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
 var reverseLooper = function(letters) {
   for(var i = letters.length - 1; i >= 0; i--)
     alert(letters[i]);
-}
+};
 
 reverseLooper(letters);
 
@@ -67,7 +67,7 @@ var evenFinder = function(nums) {
     }
   }
   return nums;
-}
+};
 
 evenFinder(nums);
 
@@ -76,7 +76,7 @@ evenFinder(nums);
 
 var nums = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 var evens = [];
-var odds = []
+var odds = [];
 //Write a function called divider that is given three arguments, nums, evens, and odds.
 //Have divider return an Array with the first item in the array being the evens array (all the even values from nums) and the second item in the Array being the odds array(all the odd values from nums).
 
@@ -92,7 +92,7 @@ var divider = function(nums, evens, odds) {
   }
   var oddEven = [evens, odds];
   return oddEven;
-}
+};
 
 divider(nums, evens, odds);
 
@@ -101,7 +101,7 @@ divider(nums, evens, odds);
 
 var getRandomArbitrary = function() {
   return Math.floor(Math.random() * (30 - 0) + 0);
-}
+};
 var numbers = [0,3,4,5,6,7,9,14,17,24,25,26,29,30];
 //Above your given a function that will return a random number between 0 and 30, and an array full or numbers. 
 //Your job is to write a function named finder that will get a random number, then loop through the array to see if 
@@ -113,11 +113,11 @@ var finder = function(numbers) {
   var flag = false;
   for (var i = 0; i < numbers.length; i++) {
     if(numbers[i] === num) {
-      flag = true;
+      flag = true; //if we find the number in the array, do we need to continue looping through? (hint: you can use break; to end the loop or return to end the funtion)
     }
   }
   return flag;
-}
+};
 finder(numbers);
 
 //Next problem
@@ -126,12 +126,12 @@ var str = 'this is my sentence';
 //Write a function called reverse that takes is given str as it's only argument and returns that string after it's been reversed
 
   //Code Here
-var reverse = function(str) {
+var reverse = function(str) {  //Good job. This function could have been written in one line. Can you see how?
   var strArray = str.split("");
   strArray.reverse();
   str = strArray.join("");
   return str;
-}
+};
 
 reverse(str);
 
@@ -156,14 +156,14 @@ var removeItem = function(myGroceryList, itemToRemove) {
   if(index !== -1) 
     myGroceryList.splice(index,1);
   return myGroceryList;
-}
+};
 
 removeItem(myGroceryList, 'chips');
 //addItem('Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 var addItem = function(myGroceryList, itemToAdd) {
   myGroceryList.push(itemToAdd);
   return myGroceryList;
-}
+};
 addItem(myGroceryList, 'jerky');
 
 
@@ -179,7 +179,7 @@ var maker = function() {
   for(var i = 1; i <= 215; i++)
     bigArray.push(i);
   return bigArray;
-}
+};
 
 maker();
 
@@ -191,7 +191,8 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
 //array after adding ten to each item in numbers. *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 
   //Code Here
-var addTen = function(numbers) {
+var addTen = function(numbers) { //Try to refactor this code so that you only use one loop instead of two. 
+                                 //Also, notice that the instructions say to return a NEW array.
   for (var i = 0; i < numbers.length; i++){
     numbers[i] = parseInt(numbers[i]);    
   }
@@ -200,7 +201,7 @@ var addTen = function(numbers) {
     numbers[i] = numbers[i] + 10;
   }
   return numbers;
-}
+};
 
 addTen(numbers);
 
@@ -229,7 +230,7 @@ var longer = function(arr1, arr2) {
     return "arr2 - " , arr2;
   else
     return "arr1 - ", arr1;
-}
+};
 
 longer(arr1, arr2);
 /*As a continuation of the previous problem, write another function called 'both'.
@@ -264,6 +265,6 @@ var both = function(arr1, arr2) {
   
   //Way three
   return arr2.concat(arr1);
-}
+};
 
 both(arr1, arr2);
